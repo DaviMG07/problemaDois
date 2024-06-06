@@ -1,0 +1,41 @@
+module cronometro(
+    input displayClock,
+    input umSegundo,
+    output [4:0] dezenaMinuto,
+    output [4:0] unidadeMinuto,
+    output [4:0] dezenaSegundos,
+    output [4:0] unidadeSegundos,
+    output [4:0] displayDigits,
+    output [7:0] displaySegments
+);
+
+wire [7:0] character;
+wire decimoSegundo, umMinuto, decimoMinuto, umaHora;
+wire [4:0] aux, helper;
+
+contadorDez(umSegundo, unidadeSegundos, decimoSegundo);
+contadorSeis(decimoSegundo, dezenaSegundos, umMinuto);
+contadorDez(umMinuto, unidadeMinuto, decimoMinuto);
+contadorSeis(decimoMinuto, dezenaMinuto, umaHora);
+
+
+flipFlopT(!displayClock, 1, 0, aux[0]);
+flipFlopT(!aux[0], 1, 0, aux[1]);
+
+
+and(displayDigits[0], !aux[0], !aux[1]);
+and(displayDigits[1], !aux[0], aux[1]);
+and(displayDigits[2], aux[0], !aux[1]);
+and(displaySegments[3], aux[0], aux[1]);
+
+multiplexador(unidadeSegundos, helper[0], displayDigits[0], character);
+multiplexador(dezenaSegundos, helper[1], displayDigits[1], character);
+multiplexador(unidadeMinuto, helper[2], displayDigits[2], character);
+multiplexador(dezenaMinuto, helper[3], displayDigits[3], character);
+
+//Falta terminar
+
+decodificadorDisplay(umSegundo, character, displaySegments);
+
+endmodule
+
