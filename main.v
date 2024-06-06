@@ -6,11 +6,11 @@ module main(
     input [2:0] nivelDagua,
     output [4:0] displayDigits,
     output [7:0] displaySegments,
-    output [3:0] leds
+	 output umSegundo
 );
 
 wire [4:0] dezenaMinuto, unidadeMinuto, dezenaSegundos, unidadeSegundos;
-wire displayClock, umSegundo;
+wire displayClock;
 
 divisorFrequencia(clock, displayClock, umSegundo);
 

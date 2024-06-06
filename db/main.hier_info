@@ -19,21 +19,18 @@ displaySegments[4] << cronometro:comb_4.port7
 displaySegments[5] << cronometro:comb_4.port7
 displaySegments[6] << cronometro:comb_4.port7
 displaySegments[7] << cronometro:comb_4.port7
-leds[0] << <GND>
-leds[1] << <GND>
-leds[2] << <GND>
-leds[3] << <GND>
+umSegundo << umSegundo.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|divisorFrequencia:comb_3
 clock => clock.IN1
-displayClock <= flipFlopT:comb_15.port3
+displayClock <= aux[6].DB_MAX_OUTPUT_PORT_TYPE
 clockOut <= flipFlopT:comb_23.port3
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_3
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_3|contadorCinco:comb_3
@@ -67,16 +64,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_3|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_4
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_4|contadorCinco:comb_3
@@ -110,16 +100,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_4|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_5
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_5|contadorCinco:comb_3
@@ -153,16 +136,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_5|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_6
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_6|contadorCinco:comb_3
@@ -196,16 +172,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_6|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_7
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_7|contadorCinco:comb_3
@@ -239,16 +208,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_7|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_8
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_8|contadorCinco:comb_3
@@ -282,16 +244,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_8|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_9
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_9|contadorCinco:comb_3
@@ -325,16 +280,9 @@ reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|divisorFrequencia:comb_3|divisorCinco:comb_9|flipFlopT:comb_4
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |main|divisorFrequencia:comb_3|divisorCinco:comb_10
 clockIn => clockIn.IN1
-clockOut <= flipFlopT:comb_4.port3
+clockOut <= contadorCinco:comb_3.port2
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_10|contadorCinco:comb_3
@@ -362,13 +310,6 @@ outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|divisorFrequencia:comb_3|divisorCinco:comb_10|contadorCinco:comb_3|flipFlopT:comb_7
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|divisorFrequencia:comb_3|divisorCinco:comb_10|flipFlopT:comb_4
 clock => outQ~reg0.CLK
 toggle => ~NO_FANOUT~
 reset => outQ~reg0.ACLR
@@ -427,194 +368,268 @@ outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 |main|cronometro:comb_4
 displayClock => _.IN1
 umSegundo => umSegundo.IN2
-dezenaMinuto[0] <= contadorSeis:comb_6.port1
-dezenaMinuto[1] <= contadorSeis:comb_6.port1
-dezenaMinuto[2] <= contadorSeis:comb_6.port1
-dezenaMinuto[3] <= contadorSeis:comb_6.port1
-dezenaMinuto[4] <= contadorSeis:comb_6.port1
-unidadeMinuto[0] <= contadorDez:comb_5.port1
-unidadeMinuto[1] <= contadorDez:comb_5.port1
-unidadeMinuto[2] <= contadorDez:comb_5.port1
-unidadeMinuto[3] <= contadorDez:comb_5.port1
-unidadeMinuto[4] <= contadorDez:comb_5.port1
-dezenaSegundos[0] <= contadorSeis:comb_4.port1
-dezenaSegundos[1] <= contadorSeis:comb_4.port1
-dezenaSegundos[2] <= contadorSeis:comb_4.port1
-dezenaSegundos[3] <= contadorSeis:comb_4.port1
-dezenaSegundos[4] <= contadorSeis:comb_4.port1
-unidadeSegundos[0] <= contadorDez:comb_3.port1
-unidadeSegundos[1] <= contadorDez:comb_3.port1
-unidadeSegundos[2] <= contadorDez:comb_3.port1
-unidadeSegundos[3] <= contadorDez:comb_3.port1
-unidadeSegundos[4] <= contadorDez:comb_3.port1
+dezenaMinuto[0] <= vintePCinco:comb_16.port3
+dezenaMinuto[1] <= vintePCinco:comb_16.port3
+dezenaMinuto[2] <= vintePCinco:comb_16.port3
+dezenaMinuto[3] <= vintePCinco:comb_16.port3
+dezenaMinuto[4] <= vintePCinco:comb_16.port3
+unidadeMinuto[0] <= vintePCinco:comb_16.port2
+unidadeMinuto[1] <= vintePCinco:comb_16.port2
+unidadeMinuto[2] <= vintePCinco:comb_16.port2
+unidadeMinuto[3] <= vintePCinco:comb_16.port2
+unidadeMinuto[4] <= vintePCinco:comb_16.port2
+dezenaSegundos[0] <= vintePCinco:comb_16.port1
+dezenaSegundos[1] <= vintePCinco:comb_16.port1
+dezenaSegundos[2] <= vintePCinco:comb_16.port1
+dezenaSegundos[3] <= vintePCinco:comb_16.port1
+dezenaSegundos[4] <= vintePCinco:comb_16.port1
+unidadeSegundos[0] <= unidadeSegundos[0].DB_MAX_OUTPUT_PORT_TYPE
+unidadeSegundos[1] <= unidadeSegundos[1].DB_MAX_OUTPUT_PORT_TYPE
+unidadeSegundos[2] <= unidadeSegundos[2].DB_MAX_OUTPUT_PORT_TYPE
+unidadeSegundos[3] <= unidadeSegundos[3].DB_MAX_OUTPUT_PORT_TYPE
+unidadeSegundos[4] <= unidadeSegundos[4].DB_MAX_OUTPUT_PORT_TYPE
 displayDigits[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 displayDigits[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 displayDigits[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 displayDigits[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 displayDigits[4] <= <GND>
-displaySegments[0] <= decodificadorDisplay:comb_19.port2
-displaySegments[1] <= decodificadorDisplay:comb_19.port2
-displaySegments[2] <= decodificadorDisplay:comb_19.port2
-displaySegments[3] <= decodificadorDisplay:comb_19.port2
-displaySegments[4] <= decodificadorDisplay:comb_19.port2
-displaySegments[5] <= decodificadorDisplay:comb_19.port2
-displaySegments[6] <= decodificadorDisplay:comb_19.port2
-displaySegments[7] <= decodificadorDisplay:comb_19.port2
+displaySegments[0] <= decodificadorDisplay:comb_17.port2
+displaySegments[1] <= decodificadorDisplay:comb_17.port2
+displaySegments[2] <= decodificadorDisplay:comb_17.port2
+displaySegments[3] <= decodificadorDisplay:comb_17.port2
+displaySegments[4] <= decodificadorDisplay:comb_17.port2
+displaySegments[5] <= decodificadorDisplay:comb_17.port2
+displaySegments[6] <= decodificadorDisplay:comb_17.port2
+displaySegments[7] <= decodificadorDisplay:comb_17.port2
 
 
-|main|cronometro:comb_4|contadorDez:comb_3
+|main|cronometro:comb_4|decresceDez:comb_3
 clock => _.IN1
-vetor[0] <= flipFlopT:comb_3.port3
-vetor[1] <= flipFlopT:comb_5.port3
-vetor[2] <= flipFlopT:comb_7.port3
-vetor[3] <= flipFlopT:comb_9.port3
+vetor[0] <= flipFlopT_2:comb_3.port3
+vetor[1] <= flipFlopT_2:comb_5.port3
+vetor[2] <= flipFlopT_2:comb_7.port3
+vetor[3] <= flipFlopT_2:comb_9.port3
 vetor[4] <= <GND>
 reset <= reset.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorDez:comb_3|flipFlopT:comb_3
+|main|cronometro:comb_4|decresceDez:comb_3|flipFlopT_2:comb_3
+clock => notOutQ~reg0.CLK
+clock => outQ~reg0.CLK
+toggle => ~NO_FANOUT~
+reset => outQ.OUTPUTSELECT
+outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+notOutQ <= notOutQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|cronometro:comb_4|decresceDez:comb_3|flipFlopT_2:comb_5
+clock => notOutQ~reg0.CLK
+clock => outQ~reg0.CLK
+toggle => ~NO_FANOUT~
+reset => outQ.OUTPUTSELECT
+outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+notOutQ <= notOutQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|cronometro:comb_4|decresceDez:comb_3|flipFlopT_2:comb_7
+clock => notOutQ~reg0.CLK
+clock => outQ~reg0.CLK
+toggle => ~NO_FANOUT~
+reset => outQ.OUTPUTSELECT
+outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+notOutQ <= notOutQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|cronometro:comb_4|decresceDez:comb_3|flipFlopT_2:comb_9
+clock => notOutQ~reg0.CLK
+clock => outQ~reg0.CLK
+toggle => ~NO_FANOUT~
+reset => outQ.OUTPUTSELECT
+outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+notOutQ <= notOutQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|cronometro:comb_4|flipFlopT:comb_4
 clock => outQ~reg0.CLK
 toggle => ~NO_FANOUT~
 reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorDez:comb_3|flipFlopT:comb_5
+|main|cronometro:comb_4|flipFlopT:comb_6
 clock => outQ~reg0.CLK
 toggle => ~NO_FANOUT~
 reset => outQ~reg0.ACLR
 outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorDez:comb_3|flipFlopT:comb_7
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16
+inA[0] => inA[0].IN1
+inA[1] => inA[1].IN1
+inA[2] => inA[2].IN1
+inA[3] => inA[3].IN1
+inA[4] => ~NO_FANOUT~
+inB[0] => inB[0].IN1
+inB[1] => inB[1].IN1
+inB[2] => inB[2].IN1
+inB[3] => inB[3].IN1
+inB[4] => ~NO_FANOUT~
+inC[0] => inC[0].IN1
+inC[1] => inC[1].IN1
+inC[2] => inC[2].IN1
+inC[3] => inC[3].IN1
+inC[4] => ~NO_FANOUT~
+inD[0] => inD[0].IN1
+inD[1] => inD[1].IN1
+inD[2] => inD[2].IN1
+inD[3] => inD[3].IN1
+inD[4] => ~NO_FANOUT~
+chave0 => chave0.IN4
+chave1 => chave1.IN4
+outX[0] <= quatroUm:comb_3.port6
+outX[1] <= quatroUm:comb_4.port6
+outX[2] <= quatroUm:comb_5.port6
+outX[3] <= quatroUm:comb_6.port6
+outX[4] <= <GND>
 
 
-|main|cronometro:comb_4|contadorDez:comb_3|flipFlopT:comb_9
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_3
+inA => inA.IN1
+inB => inB.IN1
+inC => inC.IN1
+inD => inD.IN1
+chave0 => chave0.IN2
+chave1 => chave1.IN1
+outX <= multiplexador:comb_5.port3
 
 
-|main|cronometro:comb_4|contadorSeis:comb_4
-clock => _.IN1
-vetor[0] <= flipFlopT:comb_3.port3
-vetor[1] <= flipFlopT:comb_5.port3
-vetor[2] <= flipFlopT:comb_7.port3
-vetor[3] <= <GND>
-vetor[4] <= <GND>
-reset <= reset.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_3|multiplexador:comb_3
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorSeis:comb_4|flipFlopT:comb_3
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_3|multiplexador:comb_4
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorSeis:comb_4|flipFlopT:comb_5
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_3|multiplexador:comb_5
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorSeis:comb_4|flipFlopT:comb_7
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_4
+inA => inA.IN1
+inB => inB.IN1
+inC => inC.IN1
+inD => inD.IN1
+chave0 => chave0.IN2
+chave1 => chave1.IN1
+outX <= multiplexador:comb_5.port3
 
 
-|main|cronometro:comb_4|contadorDez:comb_5
-clock => _.IN1
-vetor[0] <= flipFlopT:comb_3.port3
-vetor[1] <= flipFlopT:comb_5.port3
-vetor[2] <= flipFlopT:comb_7.port3
-vetor[3] <= flipFlopT:comb_9.port3
-vetor[4] <= <GND>
-reset <= reset.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_4|multiplexador:comb_3
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorDez:comb_5|flipFlopT:comb_3
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_4|multiplexador:comb_4
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorDez:comb_5|flipFlopT:comb_5
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_4|multiplexador:comb_5
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorDez:comb_5|flipFlopT:comb_7
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_5
+inA => inA.IN1
+inB => inB.IN1
+inC => inC.IN1
+inD => inD.IN1
+chave0 => chave0.IN2
+chave1 => chave1.IN1
+outX <= multiplexador:comb_5.port3
 
 
-|main|cronometro:comb_4|contadorDez:comb_5|flipFlopT:comb_9
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_5|multiplexador:comb_3
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorSeis:comb_6
-clock => _.IN1
-vetor[0] <= flipFlopT:comb_3.port3
-vetor[1] <= flipFlopT:comb_5.port3
-vetor[2] <= flipFlopT:comb_7.port3
-vetor[3] <= <GND>
-vetor[4] <= <GND>
-reset <= reset.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_5|multiplexador:comb_4
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorSeis:comb_6|flipFlopT:comb_3
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_5|multiplexador:comb_5
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|contadorSeis:comb_6|flipFlopT:comb_5
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_6
+inA => inA.IN1
+inB => inB.IN1
+inC => inC.IN1
+inD => inD.IN1
+chave0 => chave0.IN2
+chave1 => chave1.IN1
+outX <= multiplexador:comb_5.port3
 
 
-|main|cronometro:comb_4|contadorSeis:comb_6|flipFlopT:comb_7
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_6|multiplexador:comb_3
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|flipFlopT:comb_7
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_6|multiplexador:comb_4
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|flipFlopT:comb_9
-clock => outQ~reg0.CLK
-toggle => ~NO_FANOUT~
-reset => outQ~reg0.ACLR
-outQ <= outQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|main|cronometro:comb_4|vintePCinco:comb_16|quatroUm:comb_6|multiplexador:comb_5
+inA => aux[0].IN0
+inB => aux[1].IN0
+chaveSeletora => aux[1].IN1
+chaveSeletora => aux[0].IN1
+outX <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|cronometro:comb_4|decodificadorDisplay:comb_19
+|main|cronometro:comb_4|decodificadorDisplay:comb_17
 umSegundo => displaySegments[7].DATAIN
 character[0] => WideAnd0.IN0
 character[0] => WideAnd3.IN0

@@ -30,20 +30,3 @@ multiplexador(inC, inD, chave0, aux[1]);
 multiplexador(aux[0], aux[1], chave1, outX);
 
 endmodule
-
-module vintePCinco(
-    input [4:0] inA,
-    input [4:0] inB,
-    input [4:0] inC,
-    input [4:0] inD,
-    input chave0,
-    input chave1,
-    output [4:0] outX
-);
-
-quatroUm(inA[0], inB[0], inC[0], inD[0], chave0, chave1, outX[0]);
-quatroUm(inA[1], inB[1], inC[1], inD[1], chave0, chave1, outX[1]);
-quatroUm(inA[2], inB[2], inC[2], inD[2], chave0, chave1, outX[2]);
-quatroUm(inA[3], inB[3], inC[3], inD[3], chave0, chave1, outX[3]);
-
-endmodule

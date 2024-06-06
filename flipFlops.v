@@ -33,3 +33,23 @@ always@(posedge clock or posedge reset) begin
 end
 
 endmodule
+
+module flipFlopT_2(
+    input clock,
+    input toggle,
+    input reset,
+    output reg outQ,
+    output reg notOutQ
+);
+
+always@(posedge clock) begin
+    if (reset) begin
+        outQ <= 0;
+    end
+    else begin
+        outQ <= ~outQ;
+    end
+    notOutQ <= ~outQ;
+end
+
+endmodule

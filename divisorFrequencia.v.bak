@@ -4,7 +4,7 @@ module divisorFrequencia(
     output clockOut
 );
 
-wire [30:0] aux;
+wire [14:0] aux;
 
 divisorCinco(clock, aux[0]);
 divisorCinco(aux[0], aux[1]);
@@ -20,8 +20,9 @@ flipFlopT(!aux[9], 1, 0, aux[10]);
 flipFlopT(!aux[10], 1, 0, aux[11]);
 flipFlopT(!aux[11], 1, 0, aux[12]);
 flipFlopT(!aux[12], 1, 0, aux[13]);
-flipFlopT(aux[13], 1, 0, clockOut);
-assign displayClock = aux[6];
+flipFlopT(!aux[13], 1, 0, clockOut);
+
+assign displayClock = aux[10];
 
 endmodule
 
@@ -30,8 +31,10 @@ module divisorCinco(
     output clockOut
 );
 
+wire reset;
 wire [4:0] aux;
 
-contadorCinco(clockIn, aux, clockOut);
+contadorCinco(clockIn, aux, reset);
+flipFlopT(reset, 1, 0, clockOut);
 
 endmodule
