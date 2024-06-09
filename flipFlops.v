@@ -34,12 +34,12 @@ end
 
 endmodule
 
-module flipFlopT_2(
+module flipFlopTCompleto(
     input clock,
     input toggle,
+    input preset,
     input reset,
-    output reg outQ,
-    output reg notOutQ
+    output reg outQ
 );
 
 always@(posedge clock) begin
@@ -47,9 +47,13 @@ always@(posedge clock) begin
         outQ <= 0;
     end
     else begin
-        outQ <= ~outQ;
+        if (preset) begin
+            outQ <= 1;
+        end
+        else begin
+            outQ <= ~outQ;
+        end
     end
-    notOutQ <= ~outQ;
 end
 
 endmodule

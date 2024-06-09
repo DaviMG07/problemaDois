@@ -4,12 +4,12 @@ module main(
     input umidadeSolo,
     input temperatura,
     input [2:0] nivelDagua,
-    output [4:0] displayDigits,
+    output [3:0] displayDigits,
     output [7:0] displaySegments,
 	 output umSegundo
 );
 
-wire [4:0] dezenaMinuto, unidadeMinuto, dezenaSegundos, unidadeSegundos;
+wire [3:0] dezenaMinuto, unidadeMinuto, dezenaSegundos, unidadeSegundos;
 wire displayClock;
 
 divisorFrequencia(clock, displayClock, umSegundo);

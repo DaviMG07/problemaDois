@@ -23,7 +23,7 @@ module quatroUm(
     output outX
 );
 
-wire [4:0] aux;
+wire [3:0] aux;
 
 multiplexador(inA, inB, chave0, aux[0]);
 multiplexador(inC, inD, chave0, aux[1]);
@@ -31,14 +31,14 @@ multiplexador(aux[0], aux[1], chave1, outX);
 
 endmodule
 
-module vintePCinco(
-    input [4:0] inA,
-    input [4:0] inB,
-    input [4:0] inC,
-    input [4:0] inD,
+module DezesseisPQuatro(
+    input [3:0] inA,
+    input [3:0] inB,
+    input [3:0] inC,
+    input [3:0] inD,
     input chave0,
     input chave1,
-    output [4:0] outX
+    output [3:0] outX
 );
 
 quatroUm(inA[0], inB[0], inC[0], inD[0], chave0, chave1, outX[0]);

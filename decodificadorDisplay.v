@@ -1,10 +1,27 @@
 module decodificadorDisplay(
     input umSegundo,
-	input [4:0] character,
+    input displayClock,
+    input [3:0] unidadeSegundos,
+    input [3:0] dezenaSegundos,
+    input [3:0] unidadeMinuto,
+    input [3:0] dezenaMinuto,
+    output [3:0] displayDigits,
     output [7:0] displaySegments
 );
 
 wire [10:0] aux;
+wire [1:0] helper;
+wire [3:0] character;
+
+flipFlopT(!displayClock, 1, 0, helper[0]);
+flipFlopT(!helper[1], 1, 0, helper[1]);
+
+nand(displayDigits[0], helper[0], helper[1]);
+nand(displayDigits[1], !helper[0], helper[1]);
+nand(displayDigits[2], helper[0], !helper[1]);
+nand(displayDigits[3], !helper[0], !helper[1]);
+
+DezesseisPQuatro(unidadeSegundos, dezenaSegundos, unidadeMinuto, dezenaMinuto, helper[0], helper[1], character);
 
 and(aux[0], character[0], !character[1], !character[2], !character[3]);
 and(aux[1], !character[0], !character[1], character[2]);
@@ -31,6 +48,6 @@ and(aux[9], character[0], character[1], character[2]);
 and(aux[10], !character[1], !character[2], !character[3]);
 or(displaySegments[6], aux[9], aux[10]);
 
-assign displaySegments[7] = umSegundo;
+quatroUm(0, 1, 0, 0, !helper[0], helper[1], displaySegments[7]);
 
 endmodule

@@ -30,7 +30,7 @@ module divisorCinco(
     output clockOut
 );
 
-wire [4:0] aux;
+wire [3:0] aux;
 
 contadorCinco(clockIn, aux, clockOut);
 
