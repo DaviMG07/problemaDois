@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sun Jun  9 05:26:06 2024
+Sun Jun  9 05:27:48 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Jun  9 05:26:06 2024           ;
+; Analysis & Synthesis Status ; Failed - Sun Jun  9 05:27:47 2024           ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; main                                        ;
 ; Top-level Entity Name       ; main                                        ;
@@ -138,7 +138,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Jun  9 05:25:30 2024
+    Info: Processing started: Sun Jun  9 05:27:14 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -149,16 +149,8 @@ Info (12021): Found 4 design units, including 4 entities, in source file multipl
     Info (12023): Found entity 2: quatroUm File: /home/davi/problemaDois/multiplexador.v Line: 16
     Info (12023): Found entity 3: SeisPDois File: /home/davi/problemaDois/multiplexador.v Line: 34
     Info (12023): Found entity 4: DezesseisPQuatro File: /home/davi/problemaDois/multiplexador.v Line: 47
-Error (10170): Verilog HDL syntax error at cronometro.v(17) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 17
-Error (10170): Verilog HDL syntax error at cronometro.v(18) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 18
-Error (10170): Verilog HDL syntax error at cronometro.v(19) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 19
-Error (10170): Verilog HDL syntax error at cronometro.v(20) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 20
-Error (10170): Verilog HDL syntax error at cronometro.v(22) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 22
-Error (10170): Verilog HDL syntax error at cronometro.v(23) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 23
-Error (10170): Verilog HDL syntax error at cronometro.v(24) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 24
-Error (10170): Verilog HDL syntax error at cronometro.v(25) near text: "<=";  expecting "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/davi/problemaDois/cronometro.v Line: 25
-Error (10112): Ignored design unit "cronometro" at cronometro.v(1) due to previous errors File: /home/davi/problemaDois/cronometro.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file cronometro.v
+Info (12021): Found 1 design units, including 1 entities, in source file cronometro.v
+    Info (12023): Found entity 1: cronometro File: /home/davi/problemaDois/cronometro.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file divisorFrequencia.v
     Info (12023): Found entity 1: divisorFrequencia File: /home/davi/problemaDois/divisorFrequencia.v Line: 1
     Info (12023): Found entity 2: divisorCinco File: /home/davi/problemaDois/divisorFrequencia.v Line: 28
@@ -174,10 +166,58 @@ Info (12021): Found 3 design units, including 3 entities, in source file flipFlo
     Info (12023): Found entity 3: flipFlopTCompleto File: /home/davi/problemaDois/flipFlops.v Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
     Info (12023): Found entity 1: main File: /home/davi/problemaDois/main.v Line: 1
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 1 warning
-    Error: Peak virtual memory: 324 megabytes
-    Error: Processing ended: Sun Jun  9 05:26:06 2024
-    Error: Elapsed time: 00:00:36
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(37): created implicit net for "reset" File: /home/davi/problemaDois/cronometro.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(39): created implicit net for "dezSegundos" File: /home/davi/problemaDois/cronometro.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(40): created implicit net for "umMinuto" File: /home/davi/problemaDois/cronometro.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(41): created implicit net for "dezMinutos" File: /home/davi/problemaDois/cronometro.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(42): created implicit net for "meiaHora" File: /home/davi/problemaDois/cronometro.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(45): created implicit net for "fooReset" File: /home/davi/problemaDois/cronometro.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(53): created implicit net for "dozeMin" File: /home/davi/problemaDois/cronometro.v Line: 53
+Warning (10236): Verilog HDL Implicit Net warning at cronometro.v(56): created implicit net for "seisMin" File: /home/davi/problemaDois/cronometro.v Line: 56
+Critical Warning (10846): Verilog HDL Instantiation warning at decodificadorDisplay.v(16): instance has no name File: /home/davi/problemaDois/decodificadorDisplay.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at decodificadorDisplay.v(17): instance has no name File: /home/davi/problemaDois/decodificadorDisplay.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(28): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(29): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(30): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(57): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 57
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(58): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 58
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(59): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 59
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(60): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 60
+Critical Warning (10846): Verilog HDL Instantiation warning at decodificadorDisplay.v(24): instance has no name File: /home/davi/problemaDois/decodificadorDisplay.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at decodificadorDisplay.v(51): instance has no name File: /home/davi/problemaDois/decodificadorDisplay.v Line: 51
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(41): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 41
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(42): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 42
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexador.v(43): instance has no name File: /home/davi/problemaDois/multiplexador.v Line: 43
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(39): instance has no name File: /home/davi/problemaDois/contadores.v Line: 39
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(43): instance has no name File: /home/davi/problemaDois/contadores.v Line: 43
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(48): instance has no name File: /home/davi/problemaDois/contadores.v Line: 48
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(51): instance has no name File: /home/davi/problemaDois/contadores.v Line: 51
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(39): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 39
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(68): instance has no name File: /home/davi/problemaDois/contadores.v Line: 68
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(72): instance has no name File: /home/davi/problemaDois/contadores.v Line: 72
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(75): instance has no name File: /home/davi/problemaDois/contadores.v Line: 75
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(77): instance has no name File: /home/davi/problemaDois/contadores.v Line: 77
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(40): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 40
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(41): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 41
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(42): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 42
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(45): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 45
+Error (10161): Verilog HDL error at cronometro.v(45): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 45
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(46): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 46
+Error (10161): Verilog HDL error at cronometro.v(46): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 46
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(47): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 47
+Error (10161): Verilog HDL error at cronometro.v(47): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 47
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(48): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 48
+Error (10161): Verilog HDL error at cronometro.v(48): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 48
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(49): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 49
+Error (10161): Verilog HDL error at cronometro.v(49): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 49
+Error (10161): Verilog HDL error at cronometro.v(50): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 50
+Error (10161): Verilog HDL error at cronometro.v(53): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 53
+Error (10161): Verilog HDL error at cronometro.v(56): object "nivelDaguaAux" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/davi/problemaDois/cronometro.v Line: 56
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(58): instance has no name File: /home/davi/problemaDois/cronometro.v Line: 58
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 8 errors, 41 warnings
+    Error: Peak virtual memory: 326 megabytes
+    Error: Processing ended: Sun Jun  9 05:27:48 2024
+    Error: Elapsed time: 00:00:34
     Error: Total CPU time (on all processors): 00:00:47
 
 

@@ -14,15 +14,15 @@ module cronometro(
 
 wire [3:0] presetUniSegundos, presetDezSegundos, presetUniMinutos, presetDezMinutos;
 
-assign presetUniSegundos[0] <= 0;
-assign presetUniSegundos[1] <= 0;
-assign presetUniSegundos[2] <= 0;
-assign presetUniSegundos[3] <= 0;
+assign presetUniSegundos[0] = 0;
+assign presetUniSegundos[1] = 0;
+assign presetUniSegundos[2] = 0;
+assign presetUniSegundos[3] = 0;
 
-assign presetDezSegundos[0] <= 0;
-assign presetDezSegundos[1] <= 0;
-assign presetDezSegundos[2] <= 0;
-assign presetDezSegundos[3] <= 0;
+assign presetDezSegundos[0] = 0;
+assign presetDezSegundos[1] = 0;
+assign presetDezSegundos[2] = 0;
+assign presetDezSegundos[3] = 0;
 
 or(presetUniMinutos[0], aspersao, gotejamento);
 and(presetUniMinutos[1], gotejamento, !aspersao);
