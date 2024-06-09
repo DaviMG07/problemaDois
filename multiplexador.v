@@ -31,6 +31,19 @@ multiplexador(aux[0], aux[1], chave1, outX);
 
 endmodule
 
+module SeisPDois(
+    input [2:0] inA,
+    input [2:0] inB,
+    input chave,
+    output [2:0] outX
+);
+
+multiplexador(inA[0], inB[0], chave, outX[0]);
+multiplexador(inA[1], inB[1], chave, outX[1]);
+multiplexador(inA[2], inB[2], chave, outX[2]);
+
+endmodule
+
 module DezesseisPQuatro(
     input [3:0] inA,
     input [3:0] inB,

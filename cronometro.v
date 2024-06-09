@@ -39,9 +39,21 @@ and(reset, !gotejamento, !aspersao);
 decrementadorDez(umSegundo, presetUniSegundos, reset, unidadeSegundos, dezSegundos);
 decrementadorSeis(dezSegundos, presetDezSegundos, reset, dezenaSegundos, umMinuto);
 decrementadorDez(umMinuto, presetUniMinutos, reset, unidadeMinuto, dezMinutos);
-decrementadorTres(dezMinutos, presetDezMinutos, reset, dezenaMinuto, meiaHora);
+decrementadorSeis(dezMinutos, presetDezMinutos, reset, dezenaMinuto, meiaHora);
 
+//conta 30 min
+flipFlopT(!umMinuto, 1, fooReset, nivelDaguaAux[0]);
+flipFlopT(!nivelDaguaAux[0], 1, fooReset, nivelDaguaAux[1]);
+flipFlopT(!nivelDaguaAux[1], 1, fooReset, nivelDaguaAux[2]);
+flipFlopT(!nivelDaguaAux[2], 1, fooReset, nivelDaguaAux[3]);
+flipFlopT(!nivelDaguaAux[3], 1, fooReset, nivelDaguaAux[4]);
+and(fooReset, nivelDaguaAux[0], !nivelDaguaAux[1], nivelDaguaAux[2], nivelDaguaAux[3], nivelDaguaAux[4]);
 
+//conta 12 min
+and(dozeMin, nivelDaguaAux[0], nivelDaguaAux[1], !nivelDaguaAux[2], nivelDaguaAux[3], !nivelDaguaAux[4]);
+
+//conta 6 min
+and(seisMin, !nivelDaguaAux[0], nivelDaguaAux[1], nivelDaguaAux[2], !nivelDaguaAux[3], !nivelDaguaAux[4]);
 
 decodificadorDisplay(umSegundo, displayClock, unidadeSegundos, dezenaSegundos, unidadeMinuto, dezenaMinuto, displayDigits, displaySegments);
 
