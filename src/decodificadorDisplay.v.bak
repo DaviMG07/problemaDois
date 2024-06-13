@@ -1,0 +1,39 @@
+module decodificadorDisplay(
+    input umSegundo,
+    input displayClock,
+    input [1:0] cont_0_3,
+    input [3:0] valor,
+    output [3:0] displayDigits,
+    output [7:0] displaySegments
+);
+
+wire [10:0] aux;
+
+and(aux[0], valor[0], !valor[1], !valor[2], !valor[3]);
+and(aux[1], !valor[0], !valor[1], valor[2]);
+or(displaySegments[0], aux[0], aux[1]);
+
+and(aux[2], !valor[0], valor[1], valor[2]);
+and(aux[3], valor[0], !valor[1], valor[2]);
+or(displaySegments[1], aux[2], aux[3]);
+
+and(displaySegments[2], !valor[0], valor[1], !valor[2]);
+
+and(aux[4], valor[0], valor[1], valor[2]);
+or(displaySegments[3], displaySegments[0], aux[4]);
+
+and(aux[5], !valor[0], !valor[1], valor[2]);
+or(displaySegments[4], valor[0], aux[5]);
+
+and(aux[6], valor[1], !valor[2]);
+and(aux[7], valor[0], valor[1]);
+and(aux[8], valor[0], !valor[1], !valor[2], !valor[3]);
+or(displaySegments[5], aux[6], aux[7], aux[8]);
+
+and(aux[9], valor[0], valor[1], valor[2]);
+and(aux[10], !valor[1], !valor[2], !valor[3]);
+or(displaySegments[6], aux[9], aux[10]);
+
+assign displaySegments[7] = umSegundo;
+
+endmodule

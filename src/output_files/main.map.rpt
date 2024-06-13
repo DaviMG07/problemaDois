@@ -1,0 +1,930 @@
+Analysis & Synthesis report for main
+Wed Jun 12 22:29:42 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "LedMatrizR:comb_8|dFlipFlop:dff2"
+ 10. Port Connectivity Checks: "LedMatrizR:comb_8|dFlipFlop:dff1"
+ 11. Port Connectivity Checks: "LedMatrizR:comb_8|dFlipFlop:dff0"
+ 12. Port Connectivity Checks: "LedMatrizN:comb_7|dFlipFlop:dff2"
+ 13. Port Connectivity Checks: "LedMatrizN:comb_7|dFlipFlop:dff1"
+ 14. Port Connectivity Checks: "LedMatrizN:comb_7|dFlipFlop:dff0"
+ 15. Port Connectivity Checks: "cronometro:comb_6|decodificadorDisplay:comb_10|mux_2_1_1:comb_41"
+ 16. Port Connectivity Checks: "cronometro:comb_6|mux_16_2_4:comb_9"
+ 17. Port Connectivity Checks: "cronometro:comb_6|demux_1_2_4:comb_8"
+ 18. Port Connectivity Checks: "cronometro:comb_6|contador_0_3:comb_7|flipFlopT:comb_5"
+ 19. Port Connectivity Checks: "cronometro:comb_6|contador_0_3:comb_7|flipFlopT:comb_3"
+ 20. Port Connectivity Checks: "cronometro:comb_6|contador_0_3:comb_7"
+ 21. Port Connectivity Checks: "cronometro:comb_6|contador_0_4:comb_6"
+ 22. Port Connectivity Checks: "debouncer:comb_4|flipFlopD:comb_4"
+ 23. Port Connectivity Checks: "debouncer:comb_4|flipFlopD:comb_3"
+ 24. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_25"
+ 25. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_23"
+ 26. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_21"
+ 27. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_19"
+ 28. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_17"
+ 29. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_15"
+ 30. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_13"
+ 31. Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_11"
+ 32. Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_7"
+ 33. Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_5"
+ 34. Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_3"
+ 35. Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3"
+ 36. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Jun 12 22:29:42 2024       ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; main                                        ;
+; Top-level Entity Name       ; main                                        ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 76                                          ;
+; Total pins                  ; 32                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; main               ; main               ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; tipoRega.v                       ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/tipoRega.v             ;         ;
+; divisor.v                        ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/divisor.v              ;         ;
+; debouncer.v                      ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/debouncer.v            ;         ;
+; main.v                           ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/main.v                 ;         ;
+; contadores.v                     ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/contadores.v           ;         ;
+; multiplexadores.v                ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/multiplexadores.v      ;         ;
+; flipFlops.v                      ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/flipFlops.v            ;         ;
+; decodificadorDisplay.v           ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/decodificadorDisplay.v ;         ;
+; cronometro.v                     ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/cronometro.v           ;         ;
+; matriz.v                         ; yes             ; User Verilog HDL File  ; /home/davi/Music/problemaDois/matriz.v               ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                   ;
++---------------------------------------------+-------------------------------------------------+
+; Resource                                    ; Usage                                           ;
++---------------------------------------------+-------------------------------------------------+
+; Total logic elements                        ; 76                                              ;
+;     -- Combinational with no register       ; 37                                              ;
+;     -- Register only                        ; 0                                               ;
+;     -- Combinational with a register        ; 39                                              ;
+;                                             ;                                                 ;
+; Logic element usage by number of LUT inputs ;                                                 ;
+;     -- 4 input functions                    ; 17                                              ;
+;     -- 3 input functions                    ; 5                                               ;
+;     -- 2 input functions                    ; 15                                              ;
+;     -- 1 input functions                    ; 39                                              ;
+;     -- 0 input functions                    ; 0                                               ;
+;                                             ;                                                 ;
+; Logic elements by mode                      ;                                                 ;
+;     -- normal mode                          ; 76                                              ;
+;     -- arithmetic mode                      ; 0                                               ;
+;     -- qfbk mode                            ; 0                                               ;
+;     -- register cascade mode                ; 0                                               ;
+;     -- synchronous clear/load mode          ; 0                                               ;
+;     -- asynchronous clear/load mode         ; 24                                              ;
+;                                             ;                                                 ;
+; Total registers                             ; 39                                              ;
+; I/O pins                                    ; 32                                              ;
+; Maximum fan-out node                        ; divisorFrequencia:comb_3|flipFlopT:comb_23|outQ ;
+; Maximum fan-out                             ; 13                                              ;
+; Total fan-out                               ; 231                                             ;
+; Average fan-out                             ; 2.14                                            ;
++---------------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
++--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node           ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                      ; Entity Name          ; Library Name ;
++--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+; |main                                ; 76 (0)      ; 39           ; 0          ; 32   ; 0            ; 37 (0)       ; 0 (0)             ; 39 (0)           ; 0 (0)           ; 0 (0)      ; |main                                                                                    ; main                 ; work         ;
+;    |LedMatrizN:comb_7|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizN:comb_7                                                                  ; LedMatrizN           ; work         ;
+;       |dFlipFlop:dff0|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizN:comb_7|dFlipFlop:dff0                                                   ; dFlipFlop            ; work         ;
+;       |dFlipFlop:dff1|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizN:comb_7|dFlipFlop:dff1                                                   ; dFlipFlop            ; work         ;
+;       |dFlipFlop:dff2|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizN:comb_7|dFlipFlop:dff2                                                   ; dFlipFlop            ; work         ;
+;    |LedMatrizR:comb_8|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizR:comb_8                                                                  ; LedMatrizR           ; work         ;
+;       |dFlipFlop:dff0|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizR:comb_8|dFlipFlop:dff0                                                   ; dFlipFlop            ; work         ;
+;       |dFlipFlop:dff1|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizR:comb_8|dFlipFlop:dff1                                                   ; dFlipFlop            ; work         ;
+;       |dFlipFlop:dff2|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|LedMatrizR:comb_8|dFlipFlop:dff2                                                   ; dFlipFlop            ; work         ;
+;    |cronometro:comb_6|               ; 7 (0)       ; 2            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6                                                                  ; cronometro           ; work         ;
+;       |contador_0_3:comb_7|          ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6|contador_0_3:comb_7                                              ; contador_0_3         ; work         ;
+;          |flipFlopT:comb_3|          ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6|contador_0_3:comb_7|flipFlopT:comb_3                             ; flipFlopT            ; work         ;
+;          |flipFlopT:comb_5|          ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6|contador_0_3:comb_7|flipFlopT:comb_5                             ; flipFlopT            ; work         ;
+;       |decodificadorDisplay:comb_10| ; 4 (3)       ; 0            ; 0          ; 0    ; 0            ; 4 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6|decodificadorDisplay:comb_10                                     ; decodificadorDisplay ; work         ;
+;          |mux_2_1_1:comb_41|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6|decodificadorDisplay:comb_10|mux_2_1_1:comb_41                   ; mux_2_1_1            ; work         ;
+;       |demux_1_2_4:comb_8|           ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|cronometro:comb_6|demux_1_2_4:comb_8                                               ; demux_1_2_4          ; work         ;
+;    |divisorFrequencia:comb_3|        ; 39 (0)      ; 31           ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 31 (0)           ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3                                                           ; divisorFrequencia    ; work         ;
+;       |divisorCinco:comb_10|         ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_10                                      ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_10|contador_0_4:comb_3                  ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_10|contador_0_4:comb_3|flipFlopT:comb_3 ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_10|contador_0_4:comb_3|flipFlopT:comb_5 ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_10|contador_0_4:comb_3|flipFlopT:comb_7 ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_3|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_3                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_4|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_4                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_4|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_4|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_4|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_4|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_5|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_5                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_5|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_5|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_5|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_5|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_6|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_6                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_6|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_6|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_6|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_6|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_7|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_7                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_7|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_7|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_7|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_7|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_8|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_8                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_8|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_8|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_8|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_8|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |divisorCinco:comb_9|          ; 4 (0)       ; 3            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_9                                       ; divisorCinco         ; work         ;
+;          |contador_0_4:comb_3|       ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_9|contador_0_4:comb_3                   ; contador_0_4         ; work         ;
+;             |flipFlopT:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_9|contador_0_4:comb_3|flipFlopT:comb_3  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_5|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_9|contador_0_4:comb_3|flipFlopT:comb_5  ; flipFlopT            ; work         ;
+;             |flipFlopT:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|divisorCinco:comb_9|contador_0_4:comb_3|flipFlopT:comb_7  ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_11|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_11                                         ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_13|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_13                                         ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_15|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_15                                         ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_17|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_17                                         ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_19|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_19                                         ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_21|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_21                                         ; flipFlopT            ; work         ;
+;       |flipFlopT:comb_23|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|divisorFrequencia:comb_3|flipFlopT:comb_23                                         ; flipFlopT            ; work         ;
+;    |mux_2_1_1:comb_10|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_10                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_12|               ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_12                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_13|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_13                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_14|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_14                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_15|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_15                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_16|               ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_16                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_17|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_17                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_18|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_18                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_19|               ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_19                                                                  ; mux_2_1_1            ; work         ;
+;    |mux_2_1_1:comb_20|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|mux_2_1_1:comb_20                                                                  ; mux_2_1_1            ; work         ;
+;    |tipoRega:comb_5|                 ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|tipoRega:comb_5                                                                    ; tipoRega             ; work         ;
++--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 39    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 24    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LedMatrizR:comb_8|dFlipFlop:dff2"                                                                                                                                                     ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LedMatrizR:comb_8|dFlipFlop:dff1"                                                                                                                                                     ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LedMatrizR:comb_8|dFlipFlop:dff0"                                                                                                                                                     ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LedMatrizN:comb_7|dFlipFlop:dff2"                                                                                                                                                     ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LedMatrizN:comb_7|dFlipFlop:dff1"                                                                                                                                                     ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LedMatrizN:comb_7|dFlipFlop:dff0"                                                                                                                                                     ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|decodificadorDisplay:comb_10|mux_2_1_1:comb_41"                                                                                                                    ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; inA     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; inA[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|mux_16_2_4:comb_9"                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; outX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|demux_1_2_4:comb_8"                                                                                                                                                ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; inX     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; inX[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|contador_0_3:comb_7|flipFlopT:comb_5"                                                                                                                                 ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|contador_0_3:comb_7|flipFlopT:comb_3"                                                                                                                                 ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|contador_0_3:comb_7"                                                                          ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; valorMaximo ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cronometro:comb_6|contador_0_4:comb_6"                                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; reset ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:comb_4|flipFlopD:comb_4"                                                                                                                                                     ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data      ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:comb_4|flipFlopD:comb_3"                                                                                                                                                     ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_25"                                                                                                                                              ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; outQ       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_23"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_21"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_19"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_17"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_15"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_13"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|flipFlopT:comb_11"                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; reset      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_7"                                                                                                      ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_5"                                                                                                      ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_3"                                                                                                      ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; toggle     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; toggle[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; preset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; preset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3"                    ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; vetor ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Wed Jun 12 22:28:43 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file tipoRega.v
+    Info (12023): Found entity 1: tipoRega File: /home/davi/Music/problemaDois/tipoRega.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contagemRegressiva.v
+    Info (12023): Found entity 1: contagemRegressiva File: /home/davi/Music/problemaDois/contagemRegressiva.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file divisor.v
+    Info (12023): Found entity 1: divisorFrequencia File: /home/davi/Music/problemaDois/divisor.v Line: 1
+    Info (12023): Found entity 2: divisorCinco File: /home/davi/Music/problemaDois/divisor.v Line: 40
+    Info (12023): Found entity 3: divisorDez File: /home/davi/Music/problemaDois/divisor.v Line: 51
+Info (12021): Found 2 design units, including 2 entities, in source file debouncer.v
+    Info (12023): Found entity 1: flipFlopD File: /home/davi/Music/problemaDois/debouncer.v Line: 1
+    Info (12023): Found entity 2: debouncer File: /home/davi/Music/problemaDois/debouncer.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main File: /home/davi/Music/problemaDois/main.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file contadores.v
+    Info (12023): Found entity 1: contador_0_3 File: /home/davi/Music/problemaDois/contadores.v Line: 1
+    Info (12023): Found entity 2: contador_0_4 File: /home/davi/Music/problemaDois/contadores.v Line: 13
+    Info (12023): Found entity 3: contador_0_9 File: /home/davi/Music/problemaDois/contadores.v Line: 28
+Info (12021): Found 4 design units, including 4 entities, in source file multiplexadores.v
+    Info (12023): Found entity 1: mux_2_1_1 File: /home/davi/Music/problemaDois/multiplexadores.v Line: 1
+    Info (12023): Found entity 2: mux_4_2_1 File: /home/davi/Music/problemaDois/multiplexadores.v Line: 16
+    Info (12023): Found entity 3: mux_16_2_4 File: /home/davi/Music/problemaDois/multiplexadores.v Line: 35
+    Info (12023): Found entity 4: demux_1_2_4 File: /home/davi/Music/problemaDois/multiplexadores.v Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file flipFlops.v
+    Info (12023): Found entity 1: flipFlopT File: /home/davi/Music/problemaDois/flipFlops.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decodificadorDisplay.v
+    Info (12023): Found entity 1: decodificadorDisplay File: /home/davi/Music/problemaDois/decodificadorDisplay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cronometro.v
+    Info (12023): Found entity 1: cronometro File: /home/davi/Music/problemaDois/cronometro.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file matriz.v
+    Info (12023): Found entity 1: dFlipFlop File: /home/davi/Music/problemaDois/matriz.v Line: 1
+    Info (12023): Found entity 2: LedMatrizN File: /home/davi/Music/problemaDois/matriz.v Line: 18
+    Info (12023): Found entity 3: LedMatrizR File: /home/davi/Music/problemaDois/matriz.v Line: 96
+Warning (10236): Verilog HDL Implicit Net warning at main.v(29): created implicit net for "alarme" File: /home/davi/Music/problemaDois/main.v Line: 29
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(23): created implicit net for "nH" File: /home/davi/Music/problemaDois/matriz.v Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(24): created implicit net for "nL" File: /home/davi/Music/problemaDois/matriz.v Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(25): created implicit net for "nM" File: /home/davi/Music/problemaDois/matriz.v Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(26): created implicit net for "nAl" File: /home/davi/Music/problemaDois/matriz.v Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(41): created implicit net for "L1" File: /home/davi/Music/problemaDois/matriz.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(42): created implicit net for "L2" File: /home/davi/Music/problemaDois/matriz.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(43): created implicit net for "L3" File: /home/davi/Music/problemaDois/matriz.v Line: 43
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(44): created implicit net for "L4" File: /home/davi/Music/problemaDois/matriz.v Line: 44
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(45): created implicit net for "L5" File: /home/davi/Music/problemaDois/matriz.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(46): created implicit net for "L6" File: /home/davi/Music/problemaDois/matriz.v Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(48): created implicit net for "L_S1" File: /home/davi/Music/problemaDois/matriz.v Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(49): created implicit net for "L_S2" File: /home/davi/Music/problemaDois/matriz.v Line: 49
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(50): created implicit net for "L_S3" File: /home/davi/Music/problemaDois/matriz.v Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(51): created implicit net for "L_S4" File: /home/davi/Music/problemaDois/matriz.v Line: 51
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(52): created implicit net for "L_S5" File: /home/davi/Music/problemaDois/matriz.v Line: 52
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(53): created implicit net for "L_S6" File: /home/davi/Music/problemaDois/matriz.v Line: 53
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(56): created implicit net for "M1" File: /home/davi/Music/problemaDois/matriz.v Line: 56
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(57): created implicit net for "M2" File: /home/davi/Music/problemaDois/matriz.v Line: 57
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(58): created implicit net for "M3" File: /home/davi/Music/problemaDois/matriz.v Line: 58
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(59): created implicit net for "M5" File: /home/davi/Music/problemaDois/matriz.v Line: 59
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(60): created implicit net for "M6" File: /home/davi/Music/problemaDois/matriz.v Line: 60
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(62): created implicit net for "M_S1" File: /home/davi/Music/problemaDois/matriz.v Line: 62
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(63): created implicit net for "M_S2" File: /home/davi/Music/problemaDois/matriz.v Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(64): created implicit net for "M_S3" File: /home/davi/Music/problemaDois/matriz.v Line: 64
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(65): created implicit net for "M_S5" File: /home/davi/Music/problemaDois/matriz.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(66): created implicit net for "M_S6" File: /home/davi/Music/problemaDois/matriz.v Line: 66
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(69): created implicit net for "H2" File: /home/davi/Music/problemaDois/matriz.v Line: 69
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(70): created implicit net for "H3" File: /home/davi/Music/problemaDois/matriz.v Line: 70
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(71): created implicit net for "H5" File: /home/davi/Music/problemaDois/matriz.v Line: 71
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(72): created implicit net for "H6" File: /home/davi/Music/problemaDois/matriz.v Line: 72
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(74): created implicit net for "H_S2" File: /home/davi/Music/problemaDois/matriz.v Line: 74
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(75): created implicit net for "H_S3" File: /home/davi/Music/problemaDois/matriz.v Line: 75
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(76): created implicit net for "H_S5" File: /home/davi/Music/problemaDois/matriz.v Line: 76
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(77): created implicit net for "H_S6" File: /home/davi/Music/problemaDois/matriz.v Line: 77
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(80): created implicit net for "E2" File: /home/davi/Music/problemaDois/matriz.v Line: 80
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(81): created implicit net for "E3" File: /home/davi/Music/problemaDois/matriz.v Line: 81
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(82): created implicit net for "E4" File: /home/davi/Music/problemaDois/matriz.v Line: 82
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(83): created implicit net for "E5" File: /home/davi/Music/problemaDois/matriz.v Line: 83
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(84): created implicit net for "E6" File: /home/davi/Music/problemaDois/matriz.v Line: 84
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(114): created implicit net for "A2" File: /home/davi/Music/problemaDois/matriz.v Line: 114
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(115): created implicit net for "A3" File: /home/davi/Music/problemaDois/matriz.v Line: 115
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(116): created implicit net for "A4" File: /home/davi/Music/problemaDois/matriz.v Line: 116
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(117): created implicit net for "A6" File: /home/davi/Music/problemaDois/matriz.v Line: 117
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(118): created implicit net for "A7" File: /home/davi/Music/problemaDois/matriz.v Line: 118
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(120): created implicit net for "A_S2" File: /home/davi/Music/problemaDois/matriz.v Line: 120
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(121): created implicit net for "A_S3" File: /home/davi/Music/problemaDois/matriz.v Line: 121
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(122): created implicit net for "A_S4" File: /home/davi/Music/problemaDois/matriz.v Line: 122
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(123): created implicit net for "A_S6" File: /home/davi/Music/problemaDois/matriz.v Line: 123
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(124): created implicit net for "A_S7" File: /home/davi/Music/problemaDois/matriz.v Line: 124
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(127): created implicit net for "G2" File: /home/davi/Music/problemaDois/matriz.v Line: 127
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(128): created implicit net for "G3" File: /home/davi/Music/problemaDois/matriz.v Line: 128
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(129): created implicit net for "G4" File: /home/davi/Music/problemaDois/matriz.v Line: 129
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(130): created implicit net for "G5" File: /home/davi/Music/problemaDois/matriz.v Line: 130
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(131): created implicit net for "G6" File: /home/davi/Music/problemaDois/matriz.v Line: 131
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(133): created implicit net for "G_S2" File: /home/davi/Music/problemaDois/matriz.v Line: 133
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(134): created implicit net for "G_S3" File: /home/davi/Music/problemaDois/matriz.v Line: 134
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(135): created implicit net for "G_S4" File: /home/davi/Music/problemaDois/matriz.v Line: 135
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(136): created implicit net for "G_S5" File: /home/davi/Music/problemaDois/matriz.v Line: 136
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(137): created implicit net for "G_S6" File: /home/davi/Music/problemaDois/matriz.v Line: 137
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(140): created implicit net for "O2" File: /home/davi/Music/problemaDois/matriz.v Line: 140
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(141): created implicit net for "O3" File: /home/davi/Music/problemaDois/matriz.v Line: 141
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(142): created implicit net for "O4" File: /home/davi/Music/problemaDois/matriz.v Line: 142
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(143): created implicit net for "O5" File: /home/davi/Music/problemaDois/matriz.v Line: 143
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(144): created implicit net for "O6" File: /home/davi/Music/problemaDois/matriz.v Line: 144
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(146): created implicit net for "nSinalA" File: /home/davi/Music/problemaDois/matriz.v Line: 146
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(147): created implicit net for "nSinalG" File: /home/davi/Music/problemaDois/matriz.v Line: 147
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(149): created implicit net for "O_S2" File: /home/davi/Music/problemaDois/matriz.v Line: 149
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(150): created implicit net for "O_S3" File: /home/davi/Music/problemaDois/matriz.v Line: 150
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(151): created implicit net for "O_S4" File: /home/davi/Music/problemaDois/matriz.v Line: 151
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(152): created implicit net for "O_S5" File: /home/davi/Music/problemaDois/matriz.v Line: 152
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(153): created implicit net for "O_S6" File: /home/davi/Music/problemaDois/matriz.v Line: 153
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(159): created implicit net for "A_S5" File: /home/davi/Music/problemaDois/matriz.v Line: 159
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(161): created implicit net for "G_S7" File: /home/davi/Music/problemaDois/matriz.v Line: 161
+Warning (10236): Verilog HDL Implicit Net warning at matriz.v(161): created implicit net for "O_S7" File: /home/davi/Music/problemaDois/matriz.v Line: 161
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(21): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(22): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(23): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(47): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 47
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(19): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(20): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(21): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(22): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(23): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(24): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(25): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(26): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 26
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(27): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 27
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(28): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(29): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(30): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(31): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(32): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 32
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(33): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 33
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(34): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 34
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(36): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 36
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(37): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 37
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(38): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 38
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(39): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 39
+Critical Warning (10846): Verilog HDL Instantiation warning at divisor.v(58): instance has no name File: /home/davi/Music/problemaDois/divisor.v Line: 58
+Critical Warning (10846): Verilog HDL Instantiation warning at debouncer.v(27): instance has no name File: /home/davi/Music/problemaDois/debouncer.v Line: 27
+Critical Warning (10846): Verilog HDL Instantiation warning at debouncer.v(28): instance has no name File: /home/davi/Music/problemaDois/debouncer.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(19): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(21): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(33): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 33
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(22): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(23): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(24): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(25): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(7): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 7
+Critical Warning (10846): Verilog HDL Instantiation warning at contadores.v(8): instance has no name File: /home/davi/Music/problemaDois/contadores.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(28): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(29): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(28): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(29): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(30): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(44): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 44
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(45): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 45
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(46): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 46
+Critical Warning (10846): Verilog HDL Instantiation warning at multiplexadores.v(47): instance has no name File: /home/davi/Music/problemaDois/multiplexadores.v Line: 47
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(32): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 32
+Critical Warning (10846): Verilog HDL Instantiation warning at decodificadorDisplay.v(38): instance has no name File: /home/davi/Music/problemaDois/decodificadorDisplay.v Line: 38
+Critical Warning (10846): Verilog HDL Instantiation warning at cronometro.v(35): instance has no name File: /home/davi/Music/problemaDois/cronometro.v Line: 35
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(35): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 35
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(38): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 38
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(41): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 41
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(43): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 43
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(44): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 44
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(45): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 45
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(46): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 46
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(47): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 47
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(48): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 48
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(49): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 49
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(51): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 51
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(52): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 52
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(53): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 53
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(54): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 54
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(55): instance has no name File: /home/davi/Music/problemaDois/main.v Line: 55
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "divisorFrequencia" for hierarchy "divisorFrequencia:comb_3" File: /home/davi/Music/problemaDois/main.v Line: 19
+Info (12128): Elaborating entity "divisorCinco" for hierarchy "divisorFrequencia:comb_3|divisorCinco:comb_3" File: /home/davi/Music/problemaDois/divisor.v Line: 19
+Info (12128): Elaborating entity "contador_0_4" for hierarchy "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3" File: /home/davi/Music/problemaDois/divisor.v Line: 47
+Warning (10034): Output port "vetor" at contadores.v(15) has no driver File: /home/davi/Music/problemaDois/contadores.v Line: 15
+Info (12128): Elaborating entity "flipFlopT" for hierarchy "divisorFrequencia:comb_3|divisorCinco:comb_3|contador_0_4:comb_3|flipFlopT:comb_3" File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:comb_4" File: /home/davi/Music/problemaDois/main.v Line: 21
+Info (12128): Elaborating entity "flipFlopD" for hierarchy "debouncer:comb_4|flipFlopD:comb_3" File: /home/davi/Music/problemaDois/debouncer.v Line: 27
+Info (12128): Elaborating entity "tipoRega" for hierarchy "tipoRega:comb_5" File: /home/davi/Music/problemaDois/main.v Line: 33
+Info (12128): Elaborating entity "cronometro" for hierarchy "cronometro:comb_6" File: /home/davi/Music/problemaDois/main.v Line: 35
+Warning (10034): Output port "nivelAtualizado" at cronometro.v(12) has no driver File: /home/davi/Music/problemaDois/cronometro.v Line: 12
+Info (12128): Elaborating entity "contador_0_3" for hierarchy "cronometro:comb_6|contador_0_3:comb_7" File: /home/davi/Music/problemaDois/cronometro.v Line: 28
+Info (12128): Elaborating entity "demux_1_2_4" for hierarchy "cronometro:comb_6|demux_1_2_4:comb_8" File: /home/davi/Music/problemaDois/cronometro.v Line: 29
+Info (12128): Elaborating entity "mux_16_2_4" for hierarchy "cronometro:comb_6|mux_16_2_4:comb_9" File: /home/davi/Music/problemaDois/cronometro.v Line: 32
+Info (12128): Elaborating entity "mux_4_2_1" for hierarchy "cronometro:comb_6|mux_16_2_4:comb_9|mux_4_2_1:comb_3" File: /home/davi/Music/problemaDois/multiplexadores.v Line: 44
+Info (12128): Elaborating entity "mux_2_1_1" for hierarchy "cronometro:comb_6|mux_16_2_4:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_3" File: /home/davi/Music/problemaDois/multiplexadores.v Line: 28
+Info (12128): Elaborating entity "decodificadorDisplay" for hierarchy "cronometro:comb_6|decodificadorDisplay:comb_10" File: /home/davi/Music/problemaDois/cronometro.v Line: 35
+Info (12128): Elaborating entity "LedMatrizN" for hierarchy "LedMatrizN:comb_7" File: /home/davi/Music/problemaDois/main.v Line: 38
+Warning (10034): Output port "lin_7" at matriz.v(21) has no driver File: /home/davi/Music/problemaDois/matriz.v Line: 21
+Info (12128): Elaborating entity "dFlipFlop" for hierarchy "LedMatrizN:comb_7|dFlipFlop:dff0" File: /home/davi/Music/problemaDois/matriz.v Line: 30
+Info (12128): Elaborating entity "LedMatrizR" for hierarchy "LedMatrizR:comb_8" File: /home/davi/Music/problemaDois/main.v Line: 41
+Warning (10030): Net "A_S5" at matriz.v(159) has no driver or initial value, using a default initial value '0' File: /home/davi/Music/problemaDois/matriz.v Line: 159
+Warning (10030): Net "G_S7" at matriz.v(161) has no driver or initial value, using a default initial value '0' File: /home/davi/Music/problemaDois/matriz.v Line: 161
+Warning (10030): Net "O_S7" at matriz.v(161) has no driver or initial value, using a default initial value '0' File: /home/davi/Music/problemaDois/matriz.v Line: 161
+Warning (10034): Output port "lin_1" at matriz.v(99) has no driver File: /home/davi/Music/problemaDois/matriz.v Line: 99
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 23
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_5" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 22
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Warning (12020): Port "ordered port 2" on the entity instantiation of "comb_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/davi/Music/problemaDois/contadores.v Line: 21
+Info (13014): Ignored 1 buffer(s)
+    Info (13019): Ignored 1 SOFT buffer(s)
+Warning (12241): 24 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "segmentos[0]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "segmentos[1]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "segmentos[2]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "segmentos[3]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "segmentos[4]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "segmentos[5]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "segmentos[6]" is stuck at VCC File: /home/davi/Music/problemaDois/main.v Line: 9
+    Warning (13410): Pin "linhas[0]" is stuck at GND File: /home/davi/Music/problemaDois/main.v Line: 10
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "button" File: /home/davi/Music/problemaDois/main.v Line: 3
+Info (21057): Implemented 108 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 76 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 224 warnings
+    Info: Peak virtual memory: 338 megabytes
+    Info: Processing ended: Wed Jun 12 22:29:42 2024
+    Info: Elapsed time: 00:00:59
+    Info: Total CPU time (on all processors): 00:00:51
+
+

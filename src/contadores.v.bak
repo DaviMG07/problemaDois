@@ -1,0 +1,11 @@
+module contador_0_3(
+    input clock,
+    output [1:0] vetor,
+    output valorMaximo
+);
+
+flipFlopT(!clock, 1, 0, 0, vetor[0]);
+flipFlopT(!aux[0], 1, 0, 0, vetor[1]);
+and(valorMaximo, vetor[0], vetor[1]);
+
+endmodule

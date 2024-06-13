@@ -1,0 +1,35 @@
+module main(
+    input clockIn,
+    input button,
+    output [3:0] digitos,
+    output [7:0] segmentos
+);
+/*
+divisorFrequencia(clock, umSegundo, displayClock);
+*/
+
+debouncer(clockIn, button, clock);
+
+wire umSegundo, displayClock, aspersao, gotejamento, casoEspecifico, clock;
+wire [2:0] nivelDagua;
+
+assign umSegundo = clock;
+assign displayClock = clock;
+
+assign aspersao = 1;
+assign gotejamento = 0;
+assign casoEspecifico = 0;
+assign nivelDagua = 2'b001;
+
+cronometro(
+    umSegundo,
+    displayClock,
+    aspersao,
+    gotejamento,
+    casoEspecifico,
+    nivelDagua,
+    digitos,
+    segmentos
+);
+
+endmodule
